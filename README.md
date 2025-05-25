@@ -19,19 +19,6 @@ api-gateway
 config-server
 Централизованное хранение конфигураций
 
-🛠 Технологии
-Java 17
-Spring Boot 3.x
-Spring Web
-Spring Data JPA
-Spring Cloud:
-Eureka (Service Discovery)
-Gateway (API Gateway)
-OpenFeign / LoadBalancer
-Config (External Configuration)
-Circuit Breaker (Resilience4j)
-H2 In-Memory Database
-Swagger UI (OpenAPI)
 
 🚀 Как запускать проект
  Клонирование репозитория
@@ -44,28 +31,27 @@ cd user-service-microservices
    
 1. Discovery Server (Eureka)
 
-bash
 cd discovery-server
 mvn spring-boot:run
+
 Откройте: http://localhost:8761
 
 2. Config Server
    
-bash
 cd config-server
 mvn spring-boot:run
+
 Откройте: http://localhost:8888/actuator
 
 3. User Service
 
-bash
 cd user-service
 mvn spring-boot:run
+
 После запуска он зарегистрируется в Eureka.
 
 4. API Gateway
 
-bash
 cd api-gateway
 mvn spring-boot:run
 
@@ -75,22 +61,27 @@ mvn spring-boot:run
 
 GET
 http://localhost:8080/api/users
+
 Получить список пользователей
 
 POST
 http://localhost:8080/api/users
+
 Создать нового пользователя
 
 GET
 http://localhost:8080/api/users/{id}
+
 Получить пользователя по ID
 
 PUT
 http://localhost:8080/api/users/{id}
+
 Обновить пользователя
 
 DELETE
 http://localhost:8080/api/users/{id}
+
 Удалить пользователя
 
 Пример тела запроса: 
